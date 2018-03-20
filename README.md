@@ -11,8 +11,10 @@ ways to use Docassemble. When you complete this tutorial you will understand how
 * Use version control in Docassemble
 
 ### Getting started
+Follow the excellent Docassemble documentation for these first few steps:
+
 1. [Install Docassemble](https://docassemble.org/docs/docker.html)
 1. Enable [GitHub](https://docassemble.org/docs/installation.html#github) and 
-  [Google Drive Sync](https://docassemble.org/docs/installation.html#google drive) integration.
+  [Google Drive Sync](https://docassemble.org/docs/installation.html#google%20drive) integration.
 1. Add your GitHub and Google accounts from the Profile menu in Docassemble.
 1. Pull this Git repository: https://github.com/nonprofittechy/docassemble-tutorial-motion into your playground.
