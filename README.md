@@ -204,7 +204,7 @@ You may have wondered how exactly the end user of the interview is supposed to k
 Here are the basic legal rules necessary to understand each basis for dismissal:
 
 1. A landlord cannot terminate a tenancy with a 14 day notice to quit if the tenant paid all rent owed before the landlord sent the notice.
-1. If the tenant has a lease, the tenant can "cure" the notice to quit by paying all of the rent owed by the "answer date". If the tenant has a tenancy at will (month to month), the tenant can "cure" the notice to quit by paying all rent owed within 10 days.
+1. If the tenant has a lease, the tenant can "cure" the notice to quit by paying all of the rent owed on or before the "answer date". If the tenant has a tenancy at will (month to month), the tenant can "cure" the notice to quit by paying all rent owed on or before 10 days of receiving the notice to quit.
 1. If the landlord accepted any rent after sending the notice to quit without including a "reservation of rights" in the notice to quit or immediately when accepting the rent, the termination may be "waived". A reservation of rights looks like this: "any payments will be accepted for use and occupancy only and will not reinstate the tenancy."
 
 A highly readable primer on Massachusetts Eviction law can be found here: http://www.masslegalhelp.org/legal-tactics. Check out [Chapter 12](http://www.masslegalhelp.org/housing/lt1-chapter-12-evictions.pdf), the section titled "Stopping an Eviction Before a Trial" to see more detailed information about the basic rules above.
