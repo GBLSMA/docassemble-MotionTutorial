@@ -1,0 +1,22 @@
+---
+metadata:
+  title: |
+    Massachusetts Eviction Motion to Dismiss
+  short title: |
+    Motion to Dismiss
+  description: |
+    This interview helps you file a motion to dismiss.
+  authors:
+    - name: Quinten Steenhuis
+      organization: Greater Boston Legal Services
+    - name: Rina Padua
+      organization: Greater Boston Legal Services
+  revision_date: 2018-03-23
+---
+mandatory: True
+question: |
+  Your documents are ready. Please print and file!
+attachment:
+  - name: Motion To Dismiss
+    filename: Motion to Dismiss
+    docx template file: Motion to Dismiss (Original).docx
