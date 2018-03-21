@@ -38,8 +38,10 @@ Follow the excellent Docassemble documentation for these first few steps:
 
 ![Playground Overview](https://gblsma.github.io/docassemble-MotionTutorial/images/Package-overview.png)
 
-![Playground Overview](https://gblsma.github.io/docassemble-MotionTutorial/images/Pull-package.png)
+![Pull a package](https://gblsma.github.io/docassemble-MotionTutorial/images/Pull-package.png)
 
+## Basic concepts of document assembly
+![Overview of Document Assembly](https://gblsma.github.io/docassemble-MotionTutorial/images/interview_workflow.png)
 
 ### Configure Microsoft Word to work with Docassemble
 To prevent problems, it's recommended that you [turn off automatic smart quotes](https://support.office.com/en-us/article/change-curly-quotes-to-straight-quotes-and-vice-versa-017963a0-bc5f-486b-9c9d-0ec511a8fb8f) while creating templates in Microsoft Word for Docassemble. Instructions vary. In recent versions of Word, you can turn off smart quotes by clicking File | Options | Proofing, selecting Autocorrect and uncheck the box "Smart quotes with straight quotes" under "Replace as you type" on both the Autoformat and Autoformat as you type tabs.
