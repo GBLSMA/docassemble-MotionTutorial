@@ -1,0 +1,57 @@
+mandatory: True
+question: What is your name?
+fields:
+  - First and Last Name: tenant_name
+  
+section: About You
+---
+mandatory: True
+question: |
+  What is your current address?
+fields:
+  - Street Name: street
+  - Unit: unit
+    required: False
+  - City: city
+  - State: state
+    default: "MA"
+  - Zipcode: zip
+  - Phone number: telephone
+---
+mandatory: True
+question: |
+  What is your Original Trial Date?
+subquestion: | 
+  
+fields:
+  - Birthdate: original_date
+    datatype: date
+---
+question: |
+  What is your Rescheduled Trial Date?
+subquestion: | If you have sent the landlord a request for information using the Discovery form, you do not have to be prepared to present your case on the original trial date. A clerk will automaticaly postpone your hearing for 2 weeks. However, a judge will hear your motion to dismiss on your original date.  
+  Only if 
+fields:
+  - Birthdate: original_date
+    datatype: date
+    
+---
+mandatory: True
+question: Reasons the claim for possession by your Landlord should be dismissed
+
+fields:
+  - note: Select all the choices that apply to you.
+  - I have paid rent or tried to pay the landlord and therefore the landlord cannot terminate my tenancy with a 14-day Notice to Quit.: paid_or_tried_paying_rent 
+    datatype: yesno
+  - I "revived" my tenancy by paying all the rent "owed" within the time the law allows.: paid_rent_owed 
+    datatype: yesno
+  - The landlord accepted my rent without reservation after service of Notice to Quit, creating a new tenancy, and, therefore, is barred from recovering possession of premises, G.L. c. 239, §1.: accepted_rent_after_ntq
+    datatype: yesno
+---
+question: Please sign below
+subquestion: |
+  By signing below, you acknowledge that your answers to the questions
+  in this interview were truthful, to the best of your knowledge.
+signature: tenant_signature
+under: |
+  ${ tenant_name }
