@@ -22,18 +22,32 @@ Follow the excellent Docassemble documentation for these first few steps:
 1. Enable [GitHub](https://docassemble.org/docs/installation.html#github) and 
   [Google Drive Sync](https://docassemble.org/docs/installation.html#google%20drive) integration.
 1. Add your GitHub and Google accounts from the Profile menu in Docassemble.
-1. [Fork](https://github.com/GBLSMA/docassemble-tutorial-motion#fork-destination-box) [this repository](https://github.com/nonprofittechy/docassemble-tutorial-motion) and [pull](https://docassemble.org/docs/playground.html#packages) the forked repository into your playground from Folders | Packages menu. Make sure you pull the repository that you created by *forking* this repository. Forking will make a copy of the repository that you can update and change as much as you like.
+1. [Fork](https://github.com/GBLSMA/docassemble-tutorial-motion#fork-destination-box) [this repository](https://github.com/GBLSMA/docassemble-MotionTutorial/#fork-destination-box) on GitHub.
+1. [Pull](https://docassemble.org/docs/playground.html#packages) the forked repository into your playground from Folders | Packages menu. Make sure you pull the repository that you created by *forking* this repository. Forking will make a copy of the repository that you can update and change as much as you like.
+
+![Playground Overview](https://gblsma.github.io/docassemble-MotionTutorial/images/Package-overview.png)
+
+![Playground Overview](https://gblsma.github.io/docassemble-MotionTutorial/images/Pull-package.png)
+
 
 ### Configure Microsoft Word to work with Docassemble
 To prevent problems, it's recommended that you [turn off automatic smart quotes](https://support.office.com/en-us/article/change-curly-quotes-to-straight-quotes-and-vice-versa-017963a0-bc5f-486b-9c9d-0ec511a8fb8f) while creating templates in Microsoft Word for Docassemble. Instructions vary. In recent versions of Word, you can turn off smart quotes by clicking File | Options | Proofing, selecting Autocorrect and uncheck the box "Smart quotes with straight quotes" under "Replace as you type" on both the Autoformat and Autoformat as you type tabs.
 
 ### A tour of the Playground
+![Playground Overview](https://gblsma.github.io/docassemble-MotionTutorial/images/Playground-Overview.png)
+
+This is a view of the Docassemble playground. You start out in the template view.
+
+1. The Folders button lets you access different sections of the playground. You'll use this menu to switch between saving your changes to GitHub, uploading new files, and editing templates.
+1. The main window that fills your screen is a text area where you can edit the interview script.
+1. The list of variables can be used as a reference while you're working on the interview.
 
 ### Making your first change to a template
 
 ### Making your first edit to an interview
 
 ### Committing your first changes to Github
+
 
 ### Understanding code blocks
 
