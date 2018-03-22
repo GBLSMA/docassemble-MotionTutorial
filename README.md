@@ -195,7 +195,7 @@ Write down logical variable names for each piece of information. Docassemble var
 
 Docassemble `fields` come in different types, and there are special capabilities that come with each type. Some of the key types you will use in this interview include:
 * [Dates](https://docassemble.org/docs/fields.html#date)
-* [Yesno](https://docassemble.org/docs/fields.html#fields yesno) (True/False, or Boolean values) are easy to use in logical statements.
+* [Yesno](https://docassemble.org/docs/fields.html#fields%0yesno) (True/False, or Boolean values) are easy to use in logical statements.
 * [Numbers](https://docassemble.org/docs/fields.html#numbers)
 * [Text](https://docassemble.org/docs/fields.html#plaintext)
 * [Multiple Choice](https://docassemble.org/docs/fields.html#select) `fields` are best used when there is a limited set of valid options.
