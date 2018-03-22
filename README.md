@@ -318,5 +318,14 @@ See the [documentation](https://docassemble.org/docs/functions.html#date_interva
 
 If you are stuck, take a look at the `interview-final.yml` file for one possible solution.
 
+## Room for improvement
+Once you have completed the basic tutorial and tried adding in logic, here are some improvements you should try making:
+
+* Read about Docassemble [objects](https://docassemble.org/docs/objects.html), especially the built-in object types Individual and Address, and the special [Legal object](https://docassemble.org/docs/legal.html) types Case and Court. Refactor your variable names to make use of the special features of Objects and the useful dot (.) notation that Objects allow to keep related variables together.
+* Read about the Docassemble [include_docx_template](https://docassemble.org/docs/functions.html#include_docx_template) function. Replace the case caption with a separate Word document that you include into the parent template. Replace the signature line with a separate Word document as well.
+* Create a Google API key and enable the [Address Autocomplete](https://docassemble.org/docs/fields.html#address%20autocomplete) functionality that Docassemble supports on the screen that gather's the tenant's address.
+* Try [decorating](https://docassemble.org/docs/modifiers.html#decoration) your questions with a Font Awesome or Material Design icon. For example, find the shortcut code that represents a gavel and add it to the top right corner of the screen that asks for the name of the court the motion will be heard in.
+* Add a screening question to your interview that tells the tenant that they do not have a lawyer and requires them to acknowledge that to complete the interview. Look at the Docassemble [demonstration](https://docassemble.org/demo.html) interview and read more about [events](https://docassemble.org/docs/questions.html#event) to complete this exercise.
+
 # Conclusion
 We hope that this tutorial will help you develop your own guided interviews in Docassemble!
