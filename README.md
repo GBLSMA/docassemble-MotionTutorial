@@ -25,9 +25,9 @@ Docassemble makes use of many different component parts. Usually the Docassemble
 This tutorial includes everything you need to know about those technologies to complete the tutorial. However, it can helpful to know what terms to Google if you run into a stumbling block. The [Docassemble Slack channel](https://join.slack.com/t/docassemble/shared_invite/enQtMjQ0Njc1NDk0NjU2LTAzYzY5NWExMzUxNTNhNjUyZjRkMDg0NGE2Yjc2YjI0OGNlMTcwNjhjYzRhMjljZWU0MTI2N2U0MTFlM2ZjNzg) is also an excellent place to get troubleshooting assistance when a question is not answered in the [documentation](https://docassemble.org/docs.html).
 
 ## Getting started
-Follow the excellent Docassemble documentation for these first few steps:
+Follow the comprehensive Docassemble documentation for these first few steps:
 
-1. [Install Docassemble](https://docassemble.org/docs/docker.html). If you just want to try out Docassemble, we recommend installing Docassemble on your laptop or workstation with [Docker](https://www.docker.com/). You may need to [enable virtualization extensions](https://www.intel.com/content/www/us/en/support/articles/000007139/server-products.html) in your computer's BIOS settings to run Docker.
+1. [Install Docassemble](https://docassemble.org/docs/docker.html#install). If you just want to try out Docassemble, we recommend installing Docassemble on your laptop or workstation with [Docker](https://www.docker.com/). You may need to [enable virtualization extensions](https://www.intel.com/content/www/us/en/support/articles/000007139/server-products.html) in your computer's BIOS settings to run Docker.
 1. Create a new account on [GitHub](https://www.github.com) and [Google](https://accounts.google.com/SignUp) if you don't already have accounts on both platforms.
 1. Enable [GitHub](https://docassemble.org/docs/installation.html#github) and 
   [Google Drive Sync](https://docassemble.org/docs/installation.html#google%20drive) integration.
@@ -42,6 +42,15 @@ Follow the excellent Docassemble documentation for these first few steps:
 
 ## Basic concepts of document assembly
 ![Overview of Document Assembly](https://gblsma.github.io/docassemble-MotionTutorial/images/interview_workflow.png)
+
+The document assembly process can be separated into 3 logical steps: gathering information from the user in an interview, applying logical reasoning to the information, and finally assembling the information into a formatted document. A common scenario is completing a letter or legal pleading, where one or more blanks (called `variables` or `fields`) will be completed using responses obtained in the interview process. It is a greatly advanced version of search and replace.
+
+Docassemble adds some special features that make it especially compelling for use in document assembly.
+* You can pull in information from other sources on the Internet, such as Google Maps, and apply logical reasoning to it.
+* You have access to a full featured object oriented programming language, Python, and all the thousands of modules that have been built by others
+* Advanced features like interviews over text messaging, electronic signatures, and even artificial intelligence in the form of machine learning are all built-in.
+
+Docassemble has a learning curve, but as your confidence and skills grow, you won't find yourself limited by the platform as it is as flexible as the Python programming language itself. Yet even non-programmers will find that they can get started with Docassemble pretty quickly.
 
 ### Configure Microsoft Word to work with Docassemble
 To prevent problems, it's recommended that you [turn off automatic smart quotes](https://support.office.com/en-us/article/change-curly-quotes-to-straight-quotes-and-vice-versa-017963a0-bc5f-486b-9c9d-0ec511a8fb8f) while creating templates in Microsoft Word for Docassemble. Instructions vary. In recent versions of Word, you can turn off smart quotes by clicking File | Options | Proofing, selecting Autocorrect and uncheck the box "Smart quotes with straight quotes" under "Replace as you type" on both the Autoformat and Autoformat as you type tabs.
@@ -184,10 +193,19 @@ Write down logical variable names for each piece of information. Docassemble var
 1. Include `_` to separate words.
 1. Cannot begin with a number but may include a number.
 
+Docassemble `fields` come in different types, and there are special capabilities that come with each type. Some of the key types you will use in this interview include:
+* Dates
+* Yesno (True/False, or Boolean values) are easy to use in logical statements.
+* Numbers
+* Text
+* Multiple Choice `fields` are best used when there is a limited set of valid options.
+
+For each `variable` in your list, think about what type of `field` will best represent it.
+
 If you get stuck, look at the `interview-basic.yml` file for one approach to solving the problem.
 
 ### Writing interview questions
-We will need to create an interview screen to gather all of the information. We could create a single page that includes all of the variables. This might be very messy and hard to read. A better practice is to group the related questions together. Try it on your own first. Sketch out 5-6 screens to start.
+We will now need to create an interview screen to gather all of the information. We could create a single page that includes all of the variables. This might be very messy and hard to read. A better practice is to group the related questions together. Try it on your own first. Sketch out 5-6 screens to start.
 
 A logical grouping might be:
 1. The tenant's name, address, and phone number
@@ -196,9 +214,54 @@ A logical grouping might be:
 4. The bases for dismissal
 5. The service date and type.
 
+Once you have come up with a list of both `variable` names and a logical grouping for your questions, start adding the question blocks into your `interview-skeleton.yml` file. The Docassemble documentation groups `questions` in various places. For most screens in your interview, you will almost always want to use a fields statement that looks like the one below. Learn more about the `fields` statement [here](https://docassemble.org/docs/fields.html#fields).
+
+```yaml
+---
+question: |
+  Fields Demo
+subquestion: |
+  This is a question that demonstrates using a Fields statement
+fields:
+  - Did it happen? : my_yesno_variable
+    datatype: yesno
+  - What date did it happen? : my_date_variable
+    datatype: date
+  - Tell us where it happened: my_text_variable
+```
+
+A few things to pay attention to: 
+* notice that the `question` `subquestion` and `fields` statement are all aligned with the leftmost column. The contents of each `statement` are indented with a [TAB] or two spaces.
+* Each `field` begins with an indent and a dash `-`.
+* The basic format of each question is a description, followed by a colon, followed by the name of the variable where the information will be stored.
+* The `date` and `yesno` variables are followed by an indented line and a `datatype` statement. The `text` variable does not. Text is the default datatype in Docassemble so does not need to be specified, but special datatypes do.
+
 If you get stuck, look at the `interview-basic.yml` file for one approach to solving the problem.
 
+It's a good idea to test the interview as you go along. A quick way to test a question is to temporarily mark it as "`mandatory: True`". That will force Docassemble to ask the question.
+
 ### Putting it all together
+Once you have created the interview questions, it's time to start replacing the text in the template with the variable names. Notice that it is important to follow this order. Your interview will generate an error if a variable is used in the template before there is a question that defines it.
+
+In the Word Document template `Motion to Dismiss-Original.docx`, start by replacing one or two of the items with the `variable` name. For example, if you chose to name the `variable` holding the name of the court with the logical `court_name`, replace the text "Culver Court" with {% raw %}{{ court_name }}{% endraw %}.
+
+Before going further, save your template, sync it from Google Drive to your playground, and run the interview to see if it works.
+
+So far we have explained how to use a `text` `variable` in a template. What about a True/False or `yesno` variable? Use [if statements](https://docassemble.org/docs/documents.html#docx%20template%20file). Below is an example of an `if` statement.
+
+```jinja
+{% raw %}
+{%p if my_yesno_variable %}
+This text only shows if my_yesno_variable is True.
+{%p endif %}
+This text always displays.
+{% endraw %}
+```
+There are a few things to notice. First, we no longer are using the double brackets {% raw %}{{ var }}{% endraw %}. Instead, we are using a single bracket followed by a % sign. {% raw %}{% ... %}{% endraw %}. This syntax is used for control structures in Word templates. Also, notice the `p` following the `%`. This tells Docassemble to remove the line that has the `if` statement on it. Use this whenever the line with the `if` statement doesn't contain any other information. A {% raw %}{%p if %}{% endraw %} statement must always be matched with a {% raw %}{%p endif %}{% endraw %} statement. If you use the `p` in the opening line, it also needs to be used in the closing line, and vice versa.
+
+You can go very far in creating your template just by using `text` variables and `yesno` variables with `if` statements.
+
+Other [Jinja2 control structures](http://jinja.pocoo.org/docs/2.10/templates/#list-of-control-structures) can also be used to control the display of text in the template. For example, when displaying a list of information, you will want to make use of a `for` statement.
 
 ### Applying legal reasoning
 You may have wondered how exactly the end user of the interview is supposed to know the bases for dismissal. One of the most powerful features of a guided interview platform like Docassemble is the possibility to simulate a "lawyer in a box" at the other end of the interview.
