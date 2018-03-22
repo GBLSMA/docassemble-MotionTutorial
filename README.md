@@ -69,6 +69,7 @@ This is a view of the Docassemble playground. You start out in the interview edi
 
 ### How the Playground, Github, Google Drive, and the Interview and Template all connect
 ![Docassemble Overview](https://gblsma.github.io/docassemble-MotionTutorial/images/docassemble-workflow.png)
+
 The diagram above shows how Google Drive, Github, the interview, and the template are all connected.
 1. The template is the final document you want to print or file in court. Edit the templates in Microsoft Word. Formatting goes here.
 1. Save your templates on Google Drive, and sync them to the Playground.
