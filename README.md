@@ -17,7 +17,7 @@ You can use this demo repository to learn the basics of creating a guided interv
 You can use Docassemble without setting up GitHub or Google Drive. Google Drive makes the process of editing Microsoft Word templates much easier and more natural. GitHub integration [will help you](https://www.git-tower.com/learn/git/ebook/en/desktop-gui/basics/why-use-version-control) better work in a team, recover from mistakes in your code, and offer a helpful backup of your work at different points in time.
 
 ## Basic concepts of document assembly
-![Overview of Document Assembly](https://gblsma.github.io/docassemble-MotionTutorial/images/interview_workflow.png)
+![Overview of Document Assembly](https://gblsma.github.io/docassemble-MotionTutorial/images/Untitled%20Diagram.png)
 
 The document assembly process can be separated into 3 logical steps: gathering information from the user in an interview, applying logical reasoning to the information, and finally assembling the information into a formatted document. A common scenario is completing a letter or legal pleading, where one or more blanks (called `variables` or `fields`) will be completed using responses obtained in the interview process. It is a greatly advanced version of search and replace.
 
