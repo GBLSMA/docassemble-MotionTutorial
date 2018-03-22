@@ -1,0 +1,77 @@
+---
+metadata:
+  title: |
+    Massachusetts Eviction Motion to Dismiss
+  short title: |
+    Motion to Dismiss
+  description: |
+    This interview helps you file a motion to dismiss.
+  authors:
+    - name: Quinten Steenhuis
+      organization: Greater Boston Legal Services
+    - name: Rina Padua
+      organization: Greater Boston Legal Services
+  revision_date: 2018-03-23
+---
+mandatory: True
+question: |
+  What is your first and last name?
+fields:
+  -Your Full Name: tenant_name
+---
+mandatory: True
+question: |
+  What is your landlord's first and last name?
+fields:
+  -Your Landlord's Full Name: landlord_name
+---
+mandatory: True
+question: |
+  What is your current address?
+fields:
+  - Street Name: street
+  - Unit: unit
+    required: False
+  - City: city
+  - State: state
+    default: "MA"
+  - Zipcode: zip
+  - Phone number: telephone
+---
+mandatory: True
+question: Reasons the claim for possession by your Landlord should be dismissed
+fields:
+  - note: Select all the choices that apply to you.
+  - I have paid rent or tried to pay the landlord and therefore the landlord cannot terminate my tenancy with a 14-day Notice to Quit.: paid_or_tried_paying_rent 
+    datatype: yesno
+  - I "revived" my tenancy by paying all the rent "owed" within the time the law allows.: paid_rent_owed 
+    datatype: yesno
+  - The landlord accepted my rent without reservation after service of Notice to Quit, creating a new tenancy, and, therefore, is barred from recovering possession of premises, G.L. c. 239, §1.: accepted_rent_after_ntq
+    datatype: yesno
+---
+question: |
+  Method of Service
+subquestion: |
+
+  Some landlords or landlord's attorneys will allow you to deliver the paperwork
+  by fax or email. However, you must call and confirm with your landlord before
+  faxing or emailing. The landlord has to agree to get the paperwork this way.
+
+  When and how will you bring the paperwork to your landlord or their attorney?
+fields: 
+  - Delivery method: method_of_service
+    choices:
+      - Mail: mailed
+      - Delivering by hand: delivered in-hand
+      - Email (with permission of my landlord): emailed
+      - Fax (with permission of my landlord): faxed
+  - Date of delivery: service_date
+    datatype: date
+---
+mandatory: True
+question: |
+  Your documents are ready. Please print and file!
+attachment:
+  - name: Motion To Dismiss
+    filename: Motion to Dismiss
+    docx template file: Motion_to_Dismiss-Final_.docx

@@ -1,0 +1,127 @@
+metadata:
+  title: |
+    Massachusetts Eviction Motion to Dismiss
+  short title: |
+    Motion to Dismiss
+  description: |
+    This interview helps you file a motion to dismiss.
+  authors:
+    - name: Quinten Steenhuis
+      organization: Greater Boston Legal Services
+    - name: Rina Padua
+      organization: Greater Boston Legal Services
+  revision_date: 2018-03-23
+---
+mandatory: True
+question: |
+  What is your first and last name?
+fields:
+  - Your Full Name: tenant_name
+---
+mandatory: True
+question: |
+  What is your landlord's first and last name?
+fields:
+  - Your Landlord's Full Name: landlord_name
+---
+mandatory: True
+question: |
+  What is your current address?
+fields:
+  - Street Name: street
+  - Unit: unit
+    required: False
+  - City: city
+  - State: state
+    default: "MA"
+  - Zipcode: zip
+  - Phone number: telephone
+---
+mandatory: True
+question: |
+  What date was your Notice to Quit received?
+fields:
+  - Notice to Quit date: ntq_date
+    datatype: date
+---
+mandatory: True
+question: |
+  When is your Answer due?
+subquestion: |
+  The answer date is typically the Monday after the day the landlord has filed the case. It is sometimes shown on the summons and complaint. 
+fields:
+  - Answer due date: answer_date
+    datatype: date
+---
+mandatory: True
+question: |
+  Type of Tenancy
+fields:
+  - What type of tenancy do you have?: tenancy_type
+    choices:
+      - Tenant with Lease (written agreement): tenancy_lease
+      - Tenant at Will (month to month): tenancy_at_will
+---
+mandatory: True
+question: |
+  Landlord Failed to Terminate Tenancy Properly
+subquestion: |
+  A landlord cannot terminate a tenancy with a 14 day notice to quit if the tenant paid all rent owed before the landlord sent the notice.
+fields: 
+  - Did you pay or offered to pay the full amount of money owed on or before ${ntq_date} (NTQ date)?: paid_all_rent_owed
+    datatype: yesno
+---
+#lease
+mandatory: False
+question: |
+  Attempted "cure" of nonpayment for tenants with a lease
+subquestion: |
+  If the tenant has a lease, the tenant can “cure” the notice to quit by paying all of the rent owed on or before the “answer date”.
+fields: 
+  - Did you pay or offered to pay the full amount of money owed on or before ${ntq_date} (NTQ date)?: attempted_cure_lease
+    datatype: yesno
+    show if:
+      variable: tenancy_type
+      is: tenancy_lease
+ 
+---
+#at will
+mandatory: False
+question: |
+  Attempted "cure" of nonpayment for tenants at will
+subquestion: |
+  If you pay the amount of rent you owe within 10 days of receiving the notice, you can prevent an eviction. 
+  
+  You do not have to move out if you do not pay rent owed during this "cure" period.
+fields: 
+  - Did you pay the rent you owe within 10 days from ${ntq_date} (NTQ Date)? ${ntq_date} (NTQ date)?: attempted_cure_at_will
+    datatype: yesno
+    show if: 
+      variable: tenancy_at_will
+      is: true
+---
+mandatory: True
+question: |
+  Landlord Accepted Rent After Notice to Quit
+subquestion: |
+  If the landlord accepted any rent after sending the notice to quit without including a “reservation of rights” in the notice to quit or immediately when accepting the rent, the termination may be “waived”. 
+  
+  A reservation of rights looks like this: “any payments will be accepted for use and occupancy only and will not reinstate the tenancy.”
+fields: 
+  - Did your landlord accept any rent after the notice to quit without "reservation of rights"?: accepted_rent_after_ntq
+    datatype: yesno
+---
+mandatory: True
+question: |
+  Method of Service
+subquestion: |
+  When and how will you bring the paperwork to your landlord or their attorney?
+fields: 
+  - Delivery method: method_of_service
+    choices:
+      - Mail: mailed
+      - Delivering by hand: delivered in-hand
+      - Email (with permission of my landlord): emailed
+      - Fax (with permission of my landlord): faxed
+  - Date of delivery: service_date
+    datatype: date
