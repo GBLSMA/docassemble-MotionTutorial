@@ -231,7 +231,7 @@ fields:
 ```
 
 A few things to pay attention to: 
-* notice that the `question` `subquestion` and `fields` statement are all aligned with the leftmost column. The contents of each `statement` are indented with a [TAB] or two spaces.
+* notice that the `question` `subquestion` and `fields` statement are all aligned with the leftmost column. The contents of each `statement` are indented with a [TAB] or two spaces. The indents must match each other.
 * Each `field` begins with an indent and a dash `-`.
 * The basic format of each question is a description, followed by a colon, followed by the name of the variable where the information will be stored.
 * The `date` and `yesno` variables are followed by an indented line and a `datatype` statement. The `text` variable does not. Text is the default datatype in Docassemble so does not need to be specified, but special datatypes do.
@@ -259,7 +259,9 @@ This text always displays.
 ```
 There are a few things to notice. First, we no longer are using the double brackets {% raw %}{{ var }}{% endraw %}. Instead, we are using a single bracket followed by a % sign. {% raw %}{% ... %}{% endraw %}. This syntax is used for control structures in Word templates. Also, notice the `p` following the `%`. This tells Docassemble to remove the line that has the `if` statement on it. Use this whenever the line with the `if` statement doesn't contain any other information. A {% raw %}{%p if %}{% endraw %} statement must always be matched with a {% raw %}{%p endif %}{% endraw %} statement. If you use the `p` in the opening line, it also needs to be used in the closing line, and vice versa.
 
-You can go very far in creating your template just by using `text` variables and `yesno` variables with `if` statements.
+You can go very far in creating any template that represents a legal pleading just by using `text` variables and `yesno` variables with `if` statements. As an exercise, finish replacing all of the text you want to be able to change in your template with the variable names you gather in the interview. Use the `if` control structure for text that only conditionally displays. Remember to use the {% raw %}{%p if ... %}{% endraw %} style for a numbered list.
+
+If you are stuck, take a look at the `Motion to Dismiss-Final.docx` file to see one possible solution.
 
 Other [Jinja2 control structures](http://jinja.pocoo.org/docs/2.10/templates/#list-of-control-structures) can also be used to control the display of text in the template. For example, when displaying a list of information, you will want to make use of a `for` statement.
 
@@ -291,7 +293,7 @@ If you get stuck, look at the file `interview-logic.yml` for one approach to sol
 #### Apply the logical rules to our interview
 Notice that we do not need to make any changes to our template to add this additional logic. A `code` block in Docassemble can set a variable based on the value of another variable using a logical `if` statement.
 
-We can include all of our logical rules in a single code block. To get you started, below is an example logical block to test one scenario, a tenant who has a lease curing the notice to quit by paying all rent due sometime before the Answer date. 
+We can include all of our logical rules in a single code block. To get you started, below is an example logical block to test one scenario, a tenant who has a lease curing the notice to quit by paying all rent due sometime before the Answer date. The `if` statement in the interview is similar to the one we used in the template already.
 
 ```yaml
 ---
@@ -304,6 +306,8 @@ code: |
 ```
 
 Try completing the exercise for the remaining logical scenarios: a tenant who has a tenancy at will, a tenant who paid before receiving the notice to quit, and a tenant whose landlord waived the notice to quit by accepting rent without a reservation of rights.
+
+If you are stuck, take a look at the `interview-final.yml` file for one possible solution.
 
 # Conclusion
 We hope that this tutorial will help you develop your own guided interviews in Docassemble!
