@@ -128,10 +128,10 @@ subquestion: |
 Finally, lets edit our locally saved template `Motion to Dismiss-Original.docx` to include the `answer` variable as well. Try it on your own first by referring to the [Filling DOCX Templates](https://docassemble.org/docs/documents.html#docx template file) documentation. When you are finished, your template should include text that looks like this:
 
 ```
-Hello, World. The Answer is {{ answer }}
+Hello, World. The Answer is {% raw %}{{ answer }}{% endraw %}
 ```
 
-Notice that while in an interview question, we display a variable like this: `${variable_name}` but in our template, we include a variable by surrounding it with double brackets like this: `{{variable_name}}`.
+Notice that while in an interview question, we display a variable like this: `${variable_name}` but in our template, we include a variable by surrounding it with double brackets like this: {% raw %}{{variable_name}}{% endraw %}.
 
 Click the `GD` button to sync the playground with Google Drive and update the copy of the Word file in our Docassemble playground.
 
