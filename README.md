@@ -1,6 +1,6 @@
 # Docassemble Legal Motion Tutorial
 A simple example of a Docassemble interview that automates a Word document to create a motion to dismiss.
-Created by [Quinten Steenhuis](https://github.com/nonprofittechy) and [Rina Padua](https://github.com/Rinapadua).
+Created by [Quinten Steenhuis](https://github.com/nonprofittechy) and [Rina Padua](https://github.com/Rinapadua) at [Greater Boston Legal Services](https://www.gbls.org).
 
 This tutorial has been created to make use of features in Docassemble Version 0.2.39 and should work with any later version.
 
