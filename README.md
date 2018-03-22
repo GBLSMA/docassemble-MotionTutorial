@@ -307,6 +307,15 @@ code: |
 
 Try completing the exercise for the remaining logical scenarios: a tenant who has a tenancy at will, a tenant who paid before receiving the notice to quit, and a tenant whose landlord waived the notice to quit by accepting rent without a reservation of rights.
 
+You may get stuck with the date math as it is a moderately advanced topic. Docassemble has [special functions for working with dates](https://docassemble.org/docs/functions.html#date%20functions). Here's an example that sets the my_date variable to a date 10 days after the date we gathered in the interview:
+
+```yaml
+---
+code: |
+  my_date = gathered_date + date_interval(days=10)
+```
+See the [documentation](https://docassemble.org/docs/functions.html#date_interval) for `date_interval` for more examples. 
+
 If you are stuck, take a look at the `interview-final.yml` file for one possible solution.
 
 # Conclusion
