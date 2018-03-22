@@ -316,7 +316,7 @@ code: |
 ```
 See the [documentation](https://docassemble.org/docs/functions.html#date_interval) for `date_interval` for more examples. 
 
-If you are stuck, take a look at the `interview-final.yml` file for one possible solution.
+If you are stuck, take a look at the `interview-withlogic.yml` file for one possible solution.
 
 ## Room for improvement
 Once you have completed the basic tutorial and tried adding in logic, here are some improvements you should try making:
