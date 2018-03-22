@@ -67,6 +67,15 @@ This is a view of the Docassemble playground. You start out in the interview edi
 1. The main window that fills your screen is a text area where you can edit the interview script.
 1. The list of variables can be used as a reference while you're working on the interview.
 
+### How the Playground, Github, Google Drive, and the Interview and Template all connect
+![Docassemble Overview](https://gblsma.github.io/docassemble-MotionTutorial/images/docassemble-workflow.png)
+The diagram above shows how Google Drive, Github, the interview, and the template are all connected.
+1. The template is the final document you want to print or file in court. Edit the templates in Microsoft Word. Formatting goes here.
+1. Save your templates on Google Drive, and sync them to the Playground.
+1. Your interview is used to "fill in the blanks" in the template. Edit interviews in the Playground.
+1. As you complete each task to develop your interview, `commit` your work in progress to Github. You can also sync to Google Drive to make a local copy of your interview and template files.
+1. Variables are placeholders that can be filled-in with questions during the interview and then referenced in the document template.
+
 ### Files included in the demo project 
 This sample project includes several files to get you started:
 
