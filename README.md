@@ -273,7 +273,7 @@ If you are stuck, take a look at the `Motion to Dismiss-Final.docx` file to see 
 If you are curious, for advanced use other [Jinja2 control structures](http://jinja.pocoo.org/docs/2.10/templates/#list-of-control-structures) can also be used to control the display of text in the template. For example, when displaying a list of information, you may want to make use of a `for` statement.
 
 ### Applying legal reasoning
-You may have wondered how the end user of the interview is supposed to know the bases for dismissal. One of the most powerful features of a guided interview platform like Docassemble is the possibility to simulate a "lawyer in a box" at the other end of the interview.
+You may have wondered how the end user of the interview is supposed to know the bases for dismissal. One approach would be to include detailed instructions in the text of the interview. This would involve giving the tenant a mini-primer in eviction law and asking them to apply their new found knowledge to their own situtation. However, a better approach is to use the conditional statement features of Docassemble to do the legal reasoning for the tenant. One of the most powerful features of a guided interview platform like Docassemble is the possibility to simulate a "lawyer in a box" at the other end of the interview.
 
 Here are the basic legal rules necessary to understand each basis for dismissal:
 
