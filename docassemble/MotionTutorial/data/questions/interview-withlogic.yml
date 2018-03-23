@@ -34,8 +34,74 @@ fields:
   - City: city
   - State: state
     default: "MA"
-  - Zipcode: zip
+  - Zipcode: zipcode
   - Phone number: telephone
+---
+mandatory: True
+question: |
+  What court is your case being heard in?
+subquestion: |
+  Copy the name of the court and county from the upper-left-hand corner of the Summons and Complaint form.
+  
+fields: 
+  - Court name: court
+    choices:
+      - Central Housing Court
+      - Eastern Housing Court
+      - Metro South Housing Court
+      - Northeast Housing Court
+      - Southeast Housing Court
+      - Western Housing Court
+      - -----------------------
+      - Barnstable District Court
+      - Brighton Division Boston Municipal Court
+      - Brookline District Court
+      - Cambridge District Court
+      - Central Division Boston Municipal Court
+      - Charlestown Division Boston Municipal Court
+      - Chelsea District Court
+      - Concord District Court
+      - Dedham District Court
+      - Dorchester Division Boston Municipal Court
+      - East Boston Division Boston Municipal Court
+      - Falmouth District Court
+      - Framingham District Court
+      - Hingham District Court
+      - Lowell District Court
+      - Malden District Court
+      - Marlborough District Court
+      - Middlesex Superior Court
+      - Natick District Court
+      - Newton District Court
+      - Norfolk Superior Court
+      - Northern Berkshire District Court
+      - Orleans District Court
+      - Quincy District Court
+      - Roxbury Division Boston Municipal Court
+      - Somerville District Court
+      - South Boston Division Boston Municipal Court
+      - Stoughton District Court
+      - Suffolk Superior Court
+      - Waltham District Court
+      - West Roxbury Division Boston Municipal Court
+      - Woburn District Court
+      - Worcester District Court
+  - County: county
+    choices:
+      - Barnstable County
+      - Berkshire County
+      - Bristol County
+      - Dukes County
+      - Essex County
+      - Franklin County
+      - Hampden County
+      - Hampshire County
+      - Middlesex County
+      - Nantucket County
+      - Norfolk County
+      - Plymouth County
+      - Suffolk County
+      - Worcester County
 ---
 mandatory: True
 question: |
@@ -55,15 +121,6 @@ fields:
 ---
 mandatory: True
 question: |
-  Type of Tenancy
-fields:
-  - What type of tenancy do you have?: tenancy_type
-    choices:
-      - Tenant with Lease (written agreement): tenancy_lease
-      - Tenant at Will (month to month): tenancy_at_will
----
-mandatory: True
-question: |
   Landlord Failed to Terminate Tenancy Properly
 subquestion: |
   A landlord cannot terminate a tenancy with a 14 day notice to quit if the tenant paid all rent owed before the landlord sent the notice.
@@ -71,8 +128,19 @@ fields:
   - Did you pay or offered to pay the full amount of money owed on or before ${ntq_date} (NTQ date)?: paid_all_rent_owed
     datatype: yesno
 ---
+mandatory: True
+question: |
+  Type of Tenancy
+fields:
+  - What type of tenancy do you have?: tenancy_type
+    choices:
+      - Tenant with Lease (written agreement): tenancy_lease
+      - Tenant at Will (month to month): tenancy_at_will
+---
 #lease
-mandatory: False
+mandatory: false
+show if: |
+  tenancy_type == 'tenancy_lease'
 question: |
   Attempted "cure" of nonpayment for tenants with a lease
 subquestion: |
@@ -80,13 +148,17 @@ subquestion: |
 fields: 
   - Did you pay or offered to pay the full amount of money owed on or before ${ntq_date} (NTQ date)?: attempted_cure_lease
     datatype: yesno
-    show if:
-      variable: tenancy_type
-      is: tenancy_lease
- 
+---
+code: |
+ if attempted_cure_lease or attempted_cure_at_will :
+    rent_cured = True
+ else :
+    rent_cured = False
 ---
 #at will
-mandatory: False
+mandatory: false
+show if: |
+  tenancy_type == 'tenancy_at_will'
 question: |
   Attempted "cure" of nonpayment for tenants at will
 subquestion: |
@@ -96,9 +168,6 @@ subquestion: |
 fields: 
   - Did you pay the rent you owe within 10 days from ${ntq_date} (NTQ Date)? ${ntq_date} (NTQ date)?: attempted_cure_at_will
     datatype: yesno
-    show if: 
-      variable: tenancy_at_will
-      is: true
 ---
 mandatory: True
 question: |
@@ -125,3 +194,19 @@ fields:
       - Fax (with permission of my landlord): faxed
   - Date of delivery: service_date
     datatype: date
+---
+question: Please sign below
+subquestion: |
+  By signing below, you acknowledge that your answers to the questions
+  in this interview were truthful, to the best of your knowledge.
+signature: tenant_signature
+under: |
+  ${ tenant_name }
+---
+mandatory: True
+question: |
+  Your documents are ready. Please print and file!
+attachment:
+  - name: Motion To Dismiss
+    filename: Motion to Dismiss
+    docx template file: Motion_to_Dismiss-Final.docx
