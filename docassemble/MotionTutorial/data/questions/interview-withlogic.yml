@@ -188,3 +188,7 @@ attachment:
   - name: Motion To Dismiss
     filename: Motion to Dismiss
     docx template file: Motion_to_Dismiss-Final.docx
+need: 
+  - tenant_name
+  - landlord_name
+  - street
