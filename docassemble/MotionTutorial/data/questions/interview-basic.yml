@@ -13,19 +13,16 @@ metadata:
       organization: Greater Boston Legal Services
   revision_date: 2018-03-23
 ---
-mandatory: True
 question: |
   What is your first and last name?
 fields:
   - Your Full Name: tenant_name
 ---
-mandatory: True
 question: |
   What is your landlord's first and last name?
 fields:
   - Your Landlord's Full Name: landlord_name
 ---
-mandatory: True
 question: |
   What is your current address?
 fields:
@@ -38,19 +35,12 @@ fields:
   - Zipcode: zipcode
   - Phone number: telephone
 ---
-mandatory: True
 question: |
-  What is your county?
-fields:
-  - County: county
----
-mandatory: True
-question: |
-  What is the court name from your Summons and Complaint?
+  Which court is your eviction case scheduled in?
 fields:
   - Court Name: court
+  - County: county
 ---
-mandatory: True
 question: Reasons the claim for possession by your Landlord should be dismissed
 fields:
   - note: Select all the choices that apply to you.

@@ -45,7 +45,7 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
     return out
 
 setup(name='docassemble.MotionTutorial',
-      version='0.2',
+      version='0.4',
       description=('A tutorial of basic Docassemble features.'),
       author='Quinten Steenhuis',
       author_email='qsteenhuis@gbls.org',
