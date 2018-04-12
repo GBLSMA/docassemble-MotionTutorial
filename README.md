@@ -345,4 +345,4 @@ Once you have completed the basic tutorial and tried adding in logic, here are s
 * Add a screening question to your interview that tells the tenant that they do not have a lawyer and requires them to acknowledge that to complete the interview. Look at the Docassemble [demonstration](https://docassemble.org/demo.html) interview and read more about [events](https://docassemble.org/docs/questions.html#event) to complete this exercise.
 
 # Conclusion
-We hope that this tutorial will help you develop your own guided interviews in Docassemble!
+We hope that this tutorial will help you develop your own guided interviews in Docassemble! This tutorial is provided free as a service for anyone who wants to develop on Docassemble. If you notice typos or want to add additional content to this tutorial, pull requests are welcome. [Fork](https://github.com/GBLSMA/docassemble-MotionTutorial/edit/gh-pages/README.md#fork-destination-box) this repository and edit README.md in the gh-pages branch, make any changes, and then submit your pull request.
